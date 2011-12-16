@@ -18,7 +18,7 @@ program
         console.error(error)
       }
       else {
-        // Gets the JavaScript models of the package's message types.
+        // Gets the JavaScript models for each of the package's message types.
         generator.template(packageName, messages, function(error, output) {
           if (error) {
             console.error(error)
