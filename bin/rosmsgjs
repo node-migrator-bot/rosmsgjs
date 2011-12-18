@@ -11,6 +11,10 @@ program
   .command('generate <package>')
   .description('Generate the JavaScript models for all the message types in a package.')
   .option('-o, --output <output_file.js>', 'File to output JavaScript to. Defaults to <package>.js.')
+  .option('-n, --rosnodejs <rosnodejs_dir>',
+      'Relative or absolute location of the rosnodejs module for use in require().'
+    + ' Defaults to \'rosnodejs\''
+    )
   .action(function(packageName, options) {
     var outputFileName = options.output || packageName + '.js'
     generator.createFromPackage(packageName, function(error, messages) {
@@ -19,7 +23,10 @@ program
       }
       else {
         // Gets the JavaScript models for each of the package's message types.
-        generator.template(packageName, messages, function(error, output) {
+        var templateOptions = {
+          rosnodejsDir: options.rosnodejs
+        }
+        generator.template(packageName, messages, templateOptions, function(error, output) {
           if (error) {
             console.error(error)
           }
