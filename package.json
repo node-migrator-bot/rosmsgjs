@@ -22,6 +22,7 @@
 , "dependencies" : {
     "underscore" : "1.1.7"
   , "commander"  : "0.5.x"
+  , "async"      : "0.1.x"
   , "rosnodejs"  : "0.0.1"
   }
 , "devDependencies" : {

@@ -17,7 +17,7 @@ program
     )
   .action(function(packageName, options) {
     var outputFileName = options.output || packageName + '.js'
-    generator.createFromPackage(packageName, function(error, messages) {
+    generator.createFromPackage(packageName, function(error, messageDefinitions) {
       if (error) {
         console.error(error)
       }
@@ -26,7 +26,7 @@ program
         var templateOptions = {
           rosnodejsDir: options.rosnodejs
         }
-        generator.template(packageName, messages, templateOptions, function(error, output) {
+        generator.templatePackage(packageName, messageDefinitions, templateOptions, function(error, output) {
           if (error) {
             console.error(error)
           }
