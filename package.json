@@ -1,7 +1,7 @@
 { "name" : "rosmsgjs"
 , "description" : "Generates JavaScript objects from ROS messages."
 , "keywords" : [ "ros", "rosmsg", "rosmsgjs", "robot", "robotics" ]
-, "version" : "0.0.1"
+, "version" : "0.0.2"
 , "preferGlobal" : true
 , "homepage" : "https://github.com/baalexander/rosmsgjs"
 , "author" : "Brandon Alexander <baalexander@gmail.com> (https://github.com/baalexander)"
