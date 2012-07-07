@@ -28,7 +28,7 @@ describe('How to use rosmsgjs', function() {
 
       // The file generated defaults to the package name with a .js extension.
       // An alternative file name can be provided with the `--output` option.
-      path.existsSync('./std_msgs.js').should.be.true
+      fs.existsSync('./std_msgs.js').should.be.true
 
       // Remove the generated file from testing.
       fs.unlinkSync('./std_msgs.js')
